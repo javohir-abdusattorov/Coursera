@@ -16,8 +16,8 @@ Dependencies:
 - Node.js
 - Npm
 - PostgreSQL
-- Vue.js, Vue cli
-- Nest.js & TypeScript (For editing project)
+- Nest.js & TypeScript (For editing backend)
+- Vue.js, Vue cli (For editing frontend)
 
 **1. Start backend**
 
