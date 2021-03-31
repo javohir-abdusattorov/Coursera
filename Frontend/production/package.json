@@ -1,0 +1,19 @@
+{
+  "name": "ProjectName",
+  "version": "1.0.0",
+  "description": "Frontend server for render",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server"
+  },
+  "keywords": [
+    "Frontend",
+    "Vue.js"
+  ],
+  "author": "Javohir Abdusattorov <javohirabdusattorov2005@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "serve-handler": "^6.1.3"
+  }
+}
