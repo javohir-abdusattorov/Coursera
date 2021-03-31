@@ -1,0 +1,106 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Category {
+  id: ID!
+  name: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  courses: [Course!]!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Comment {
+  id: ID!
+  message: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  user: User!
+  course: Course!
+}
+
+type Course {
+  id: ID!
+  title: String!
+  description: String!
+  price: Float!
+  video: String!
+  poster: String!
+  sold: Float!
+  rating: Float!
+  discount: Boolean!
+  discountPercent: Float!
+  discountDeadline: Float!
+  active: Boolean!
+  saved: Boolean!
+  tags: [String!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  author: User!
+  category: Category!
+  comments: [Comment!]!
+  customers: [User!]!
+}
+
+type Log {
+  type: String!
+  message: String!
+  createdAt: Float!
+}
+
+type User {
+  id: ID!
+  username: String!
+  account: Float!
+  profilePicture: String!
+  spam: Boolean!
+  subscribersCount: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  role: String!
+  courses: [Course!]!
+  comments: [Comment!]!
+  purchasedCourses: [Course!]!
+  savedCourses: [Course!]!
+  subscriptions: [User!]!
+  logs: [Log!]!
+}
+
+type Logger {
+  id: ID!
+  logs: [Log!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  user: User!
+}
+
+type Query {
+  getAllUsers: [User!]!
+  getUser(id: Float!): User!
+  getAdmin: User!
+  getMe(token: String!): User!
+  getSubscribedUsers(token: String!): [User!]!
+  searchUser(q: String!): [User!]!
+  getMyLogs(token: String!): Logger!
+  getUserLogs(id: Float!): Logger!
+  getAllCourses: [Course!]!
+  getCourse(id: Float!): Course!
+  searchCourse(q: String!): [Course!]!
+  getMyCourses(token: String!): [Course!]!
+  getAuthorCourses(author: Float!): [Course!]!
+  getCategoryCourses(category: Float!): [Course!]!
+  getDiscountCourses: [Course!]!
+  getSavedCourses: [Course!]!
+  getCoursesByTags(tags: [String!]!): [Course!]!
+  getFavouriteCourses(token: String!): [Course!]!
+  getAllCategories: [Category!]!
+  getCategory(id: Float!): Category!
+  searchCategory(q: String!): [Category!]!
+  getAllComments: [Comment!]!
+  getComment(id: Float!): Comment!
+}

@@ -1,0 +1,30 @@
+server:
+  port: 5656
+
+db:
+  type: postgres
+  port: 5432
+  host: localhost
+  username: postgres
+  password: javohir3003
+  database: courses
+  synchronize: true
+
+graphql:
+  autoSchemaFile: true,
+  playground: true,
+  path: "/oup957ofp8n53cpe7in6"
+
+jwt:
+  secret: rVUjuTGpf3E8p7SkCkK84XzSPWWAWIAMX37OQe2m
+  expiresIn: 604800000
+
+user:
+  startingAccount: 200
+  defaultImage: "public-assets/user/default_user_image.png"
+
+course:
+  courseReturnPercent: 50
+  spamPercent: 50
+  spamReturnPercent: 50
+  checkDiscountMinute: 15
